@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import AdminPage from '../AdminPage/AdminPage'
 import './Root.css'
 
 class Root extends Component {
     render() {
         return (
             <div className="Root">
-                <h1>TEST ENVIRONMENT</h1>
+                <AdminPage/>
             </div>
         );
     }
