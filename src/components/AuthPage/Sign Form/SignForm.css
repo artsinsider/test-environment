@@ -33,16 +33,7 @@ h2 {
     color: #4d4d4d;
 }
 
-.form-auth #login, #password {
-    padding-left: 15px;
-    width: 200px;
-    height: 20px;
-    margin: 10px;
-    border: 1px solid #cecece;
-    background: #F6F6f6;
-    border-radius: 3px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-size: 16px;
-
+.remember-me label {
+    margin-left: 10px;
 }
+

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {reduxForm, Field}   from 'redux-form';
+import ErrorField           from '../../ErrorField/ErrorField'
 import './SignForm.css'
 
 class SignInForm extends Component {
@@ -10,13 +11,10 @@ class SignInForm extends Component {
                 <h2>ЗАПИСЬ НА САММИТ</h2>
                 <form onSubmit={onSubmit}>
                     <div className="login">
-                        <title>Логин</title>
-                        <Field id="login" name="login" placeholder="Email" type="text" component="input"/>
+                        <Field id="login" name="email" placeholder="Email" type="text" component={ErrorField}/>
                     </div>
                     <div className="password">
-                        <title>Пароль</title>
-
-                        <Field id="password" name="password" placeholder="Password" type="password" component="input"/>
+                        <Field id="password" name="password" placeholder="Password" type="password" component={ErrorField}/>
                     </div>
                     <div className="remember-me">
                         <Field id="remember" name="remember" type="checkbox" component="input"/>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {reduxForm, Field}   from 'redux-form';
+import EmailValidator       from 'email-validator';
+import ErrorField           from '../../ErrorField/ErrorField'
 import './SignForm.css'
 
 class SignUpForm extends Component {
@@ -10,13 +12,10 @@ class SignUpForm extends Component {
                 <h2>ЗАПИСЬ НА САММИТ</h2>
                 <form onSubmit={onSubmit}>
                     <div className="login">
-                        <title>Логин</title>
-                        <Field id="login" name="login" placeholder="Email" type="text" component="input"/>
+                        <Field id="login" name="email" placeholder="Email" type="text" component={ErrorField}/>
                     </div>
                     <div className="password">
-                        <title>Пароль</title>
-
-                        <Field id="password" name="password" placeholder="Password" type="password" component="input"/>
+                        <Field id="password" name="password" placeholder="Password" type="password" component={ErrorField}/>
                     </div>
                     <div className="remember-me">
                         <Field id="remember" name="remember" type="checkbox" component="input"/>
@@ -29,6 +28,19 @@ class SignUpForm extends Component {
     }
 }
 
+const validate = ({email, password}) => {
+    const error = {};
+
+    if(!email) error.email = 'Email is required';
+    else if(!EmailValidator.validate(email)) error.email = 'Invalid email';
+
+    if(!password) error.password = 'Password is required';
+    else if (password.length < 8) error.password = 'Password short';
+
+    return error;
+};
+
 export default reduxForm({
-    form: 'auth'
+    form: 'auth',
+    validate
 })(SignUpForm);
