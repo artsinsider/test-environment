@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {Route, NavLink}     from 'react-router-dom';
-import SignInForm          from './Sign Form/SignInForm'
-import SignUpForm          from './Sign Form/SignUpForm'
+import {connect}            from 'react-redux'
+import SignInForm           from './Sign Form/SignInForm'
+import SignUpForm           from './Sign Form/SignUpForm'
+import Loader               from '../Loader/Loader'
+import {signUp, moduleName} from  '../../ducks/auth'
 
 import './AuthPage.css'
 
@@ -12,9 +15,10 @@ class AuthPage extends Component {
         e.preventDefault();
     };
 
-    handelSignUp = (e) => {
-        console.log('handelSignUp')
-        e.preventDefault();
+    handelSignUp = ({email, password}) => {
+
+        this.props.signUp(email, password);
+        return false
     };
 
     signIn = () => <SignInForm text="Вход" onSubmit={this.handelSignIn} />
@@ -23,17 +27,25 @@ class AuthPage extends Component {
 
     render() {
         return (
-            <div className="home">
-                 <NavLink activeClassName="selected" to="/auth/signin">Вход</NavLink>
-                 <NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</NavLink>
-                <div className="auth-page">
-                    <Route path="/auth/signin" render={this.signIn} />
-                    <Route path="/auth/signup" render={this.signUp} />
+            <div>
+                <div className="home">
+                    <NavLink activeClassName="selected" to="/auth/signin">Вход</NavLink>
+                    <NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</NavLink>
+                    <div className="auth-page">
+                        <Route path="/auth/signin" render={this.signIn} />
+                        <Route path="/auth/signup" render={this.signUp} />
+                    </div>
                 </div>
-
+               <Loader isLoading={this.props.loading}/>
             </div>
+
         );
     }
 }
 
-export default AuthPage;
+export default connect(state => {
+    return {
+        user: state[moduleName].user,
+        loading: state[moduleName].loading
+    }
+}, {signUp})(AuthPage)

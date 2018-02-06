@@ -6,11 +6,12 @@ import './SignForm.css'
 
 class SignUpForm extends Component {
     render() {
-        const {onSubmit, text} = this.props;
+        const {handleSubmit, text} = this.props;
+
         return (
             <div className="form-auth">
                 <h2>ЗАПИСЬ НА САММИТ</h2>
-                <form onSubmit={onSubmit}>
+                <form onSubmit={handleSubmit}>
                     <div className="login">
                         <Field id="login" name="email" placeholder="Email" type="text" component={ErrorField}/>
                     </div>
@@ -35,7 +36,7 @@ const validate = ({email, password}) => {
     else if(!EmailValidator.validate(email)) error.email = 'Invalid email';
 
     if(!password) error.password = 'Password is required';
-    else if (password.length < 8) error.password = 'Password short';
+    else if (password.length <= 3) error.password = 'Password short';
 
     return error;
 };
