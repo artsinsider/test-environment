@@ -1,28 +1,48 @@
-.auth-page {
-    height: 95vh;
-    text-align: center;
-}
+.home .links {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  background: #19a6db;
+  font-weight: 200;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #2de8fc; }
+  .home .links a {
+    display: inline-block;
+    color: #2de8fc;
+    padding: 10px;
+    text-decoration: none; }
+    .home .links a:hover {
+      color: #006b8d;
+      transition: color 0.3s; }
+  .home .links .selected {
+    color: #fff; }
 
-.auth-page .form-auth {
+.home .auth-page {
+  height: 95vh;
+  text-align: center; }
+  .home .auth-page .form-auth {
     display: inline-block;
     vertical-align: middle;
-}
-
-.auth-page::before {
+    width: 310px;
+    padding: 0; }
+    .home .auth-page .form-auth .title-auth-form {
+      background-color: #19a6db;
+      padding: 28px 0;
+      border-radius: 3px 3px 0 0;
+      margin: 0;
+      color: #fff;
+      letter-spacing: 1px;
+      font-size: 19px;
+      border-bottom: 1px solid #d4d4d4;
+      font-weight: 200; }
+    .home .auth-page .form-auth .forgot-auth-data {
+      font-weight: 200;
+      color: #afafaf;
+      font-size: 14px;
+      padding: 5px 0 15px 0; }
+  .home .auth-page:before {
     content: "";
     display: inline-block;
     min-height: inherit;
     height: 100%;
-    vertical-align: middle;
-}
-
-.home a {
-    display: inline-block;
-    color: #d4d4d4;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.home .selected {
-    color: #4d4d4d;
-}
+    vertical-align: middle; }

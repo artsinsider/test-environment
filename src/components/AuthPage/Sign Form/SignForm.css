@@ -1,39 +1,40 @@
-h2 {
-    color: #428BCA;
-}
-
 .form-auth {
-    border: 1px solid #d4d4d4;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #f1f1f1;
-    box-shadow: 2px 5px 13px 0px #d4d4d4;
-}
-
-.form-auth #submit {
-    width: 218px;
-    height: 35px;
+  padding: 15px;
+  border-radius: 3px;
+  background-color: #f1f1f1;
+  box-shadow: 2px 3px 7px 0 #4a4a4a; }
+  .form-auth .btn-auth {
+    font-family: sans-serif;
+    font-weight: 200;
+    width: 280px;
+    height: 45px;
     margin: 15px;
     border: none;
     border-radius: 3px;
-    background-color: #428BCA;
+    background-color: #19a6db;
     font-size: 16px;
+    letter-spacing: 1px;
     color: #fff;
-}
-
-#remember {
-    width: 25px;
-    height: 25px;
-    position: relative;
-    top: 6px;
-    left: 5px;
-}
-.remember-me {
+    box-shadow: 0 4px 0 #0b82ad; }
+    .form-auth .btn-auth:hover {
+      color: #bdd6ec;
+      cursor: pointer;
+      transition: color 0.2s; }
+    .form-auth .btn-auth:focus {
+      box-shadow: 0 2px 0 #3773a7;
+      transition: all 0.2s; }
+    .form-auth .btn-auth:focus {
+      outline: none; }
+  .form-auth .remember-me {
     margin-right: 15px;
     color: #4d4d4d;
-}
-
-.remember-me label {
-    margin-left: 10px;
-}
-
+    font-weight: 200;
+    padding: 5px; }
+    .form-auth .remember-me .remember {
+      width: 25px;
+      height: 25px;
+      position: relative;
+      top: 6px;
+      left: 5px; }
+      .form-auth .remember-me .remember .remember-label {
+        margin-left: 10px; }

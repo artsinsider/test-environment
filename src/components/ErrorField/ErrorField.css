@@ -1,1 +1,31 @@
-.error-field {    display: inline-block;}.error-field input{    padding-left: 15px;    width: 200px;    height: 20px;    margin: 10px;    border: 1px solid #cecece;    background: #F6F6f6;    border-radius: 3px;    padding-bottom: 10px;    padding-top: 10px;    font-size: 16px;}.error-valid {    font-size: 14px;    color: red;    text-align: left;    padding-left: 15px;}
+.error-field .label-field {
+  font-weight: 200;
+  padding: 20px 10px;
+  background-color: #efefef;
+  text-align: left;
+  font-size: 15px;
+  color: #464646;
+  letter-spacing: 1px;
+  text-transform: capitalize; }
+
+.error-field .input-field {
+  padding-left: 15px;
+  width: calc(100% - 17px);
+  border: none;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  font-size: 16px;
+  border-top: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4; }
+  .error-field .input-field:focus {
+    outline: none;
+    border-left: 4px solid #19a6db;
+    width: calc(100% - 21px); }
+
+.error-field .error-valid {
+  padding: 5px 0;
+  font-size: 14px;
+  color: #ff4242;
+  letter-spacing: 1px;
+  font-weight: 200;
+  border-bottom: 1px solid #d4d4d4; }

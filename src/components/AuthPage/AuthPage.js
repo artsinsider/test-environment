@@ -6,8 +6,6 @@ import SignUpForm           from './Sign Form/SignUpForm'
 import Loader               from '../Loader/Loader'
 import {signUp, moduleName} from  '../../ducks/auth'
 
-import './AuthPage.css'
-
 class AuthPage extends Component {
 
     handelSignIn = (e) => {
@@ -29,8 +27,11 @@ class AuthPage extends Component {
         return (
             <div>
                 <div className="home">
-                    <NavLink activeClassName="selected" to="/auth/signin">Вход</NavLink>
-                    <NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</NavLink>
+                    <div className="links">
+                        <NavLink activeClassName="selected" to="/auth/signin">Вход</NavLink>
+                        <NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</NavLink>
+                    </div>
+
                     <div className="auth-page">
                         <Route path="/auth/signin" render={this.signIn} />
                         <Route path="/auth/signup" render={this.signUp} />
