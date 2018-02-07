@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../logo.svg'
+import logo from '../../5.svg'
 import './Loader.css'
 
 export default function Loader(props) {
