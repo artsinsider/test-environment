@@ -9,7 +9,6 @@ import {signUp, moduleName} from  '../../ducks/auth'
 class AuthPage extends Component {
 
     handelSignIn = (e) => {
-        console.log('handelSignIn')
         e.preventDefault();
     };
 
@@ -28,7 +27,7 @@ class AuthPage extends Component {
             <div>
                 <div className="home">
                     <div className="links">
-                        <NavLink activeClassName="selected" to="/auth/signin">Вход</NavLink>
+                        <NavLink activeClassName="selected" to="/auth/signin">Авторизоваться</NavLink>
                         <NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</NavLink>
                     </div>
 

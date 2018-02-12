@@ -1,10 +1,9 @@
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-image: url(media/back-3.jpg);
-  background-position: top center;
-  background-size: 100% 120%; }
+  padding: 0; }
+  body h3 {
+    margin: 0;
+    padding: 0; }
 
 .loader-wrapper {
   width: 100%;
@@ -31,6 +30,17 @@ body {
 .loader-wrapper-visible {
   display: none; }
 
+#root {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url(media/back-3.jpg);
+  background-position: top center;
+  background-size: 100% 120%; }
+
+.please-sign-in {
+  height: 100vh; }
+
 .home .links {
   position: absolute;
   text-align: center;
@@ -51,7 +61,7 @@ body {
     color: #fff; }
 
 .home .auth-page {
-  height: 95vh;
+  height: 100vh;
   text-align: center; }
   .home .auth-page .form-auth {
     display: inline-block;
