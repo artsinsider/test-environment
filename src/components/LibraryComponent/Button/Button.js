@@ -1,0 +1,1 @@
+import React from 'react';export default function Button(props) {    const {text = '', type = 'button'} = props;    return <button className="btn-simple" type={type}>{text}</button>}

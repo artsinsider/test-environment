@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {reduxForm, Field}   from 'redux-form';
 import EmailValidator       from 'email-validator';
 import ErrorField           from '../../ErrorField/ErrorField'
+import Button               from '../../LibraryComponent/Button/Button'
 
 class SignUpForm extends Component {
     render() {
@@ -21,7 +22,7 @@ class SignUpForm extends Component {
                         <Field className="remember" id="remember" name="remember" type="checkbox" component="input"/>
                         <label className="remember-label">Запомнить меня</label>
                     </div>
-                    <button className="btn-auth" id="submit" type="submit">{text}</button>
+                    <Button type="submit" text={text}/>
                 </form>
             </div>
         );

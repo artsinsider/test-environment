@@ -3,28 +3,6 @@
   border-radius: 3px;
   background-color: #f1f1f1;
   box-shadow: 2px 3px 7px 0 #4a4a4a; }
-  .form-auth .btn-auth {
-    font-family: sans-serif;
-    font-weight: 200;
-    width: 280px;
-    height: 45px;
-    margin: 15px;
-    border: none;
-    border-radius: 3px;
-    background-color: #19a6db;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: #fff;
-    box-shadow: 0 4px 0 #0b82ad; }
-    .form-auth .btn-auth:hover {
-      color: #bdd6ec;
-      cursor: pointer;
-      transition: color 0.2s; }
-    .form-auth .btn-auth:focus {
-      box-shadow: 0 2px 0 #3773a7;
-      transition: all 0.2s; }
-    .form-auth .btn-auth:focus {
-      outline: none; }
   .form-auth .remember-me {
     margin-right: 15px;
     color: #4d4d4d;

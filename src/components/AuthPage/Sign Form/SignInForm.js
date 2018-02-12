@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {reduxForm, Field}   from 'redux-form';
 import ErrorField           from '../../ErrorField/ErrorField'
+import Button               from '../../LibraryComponent/Button/Button'
 
 class SignInForm extends Component {
     render() {
@@ -19,7 +20,7 @@ class SignInForm extends Component {
                         <Field className="remember" id="remember" name="remember" type="checkbox" component="input"/>
                         <label className="remember-label">Запомнить меня</label>
                     </div>
-                    <button className="btn-auth" id="submit" type="submit">{text}</button>
+                    <Button type="submit" text={text}/>
                     <div className="forgot-auth-data" >Забыли пароль или логин ?</div>
                 </form>
             </div>
