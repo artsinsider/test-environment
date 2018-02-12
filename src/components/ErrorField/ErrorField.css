@@ -16,7 +16,8 @@
   padding-top: 25px;
   font-size: 16px;
   border-top: 1px solid #d4d4d4;
-  border-bottom: 1px solid #d4d4d4; }
+  border-bottom: 1px solid #d4d4d4;
+  color: #19a6db; }
   .error-field .input-field:focus {
     outline: none;
     border-left: 4px solid #19a6db;
