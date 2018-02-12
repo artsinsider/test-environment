@@ -1,0 +1,26 @@
+
+.form-auth {
+    padding: 15px;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+    box-shadow: 2px 3px 7px 0 #4a4a4a;
+
+    .remember-me {
+        margin-right: 15px;
+        color: #4d4d4d;
+        font-weight:200;
+        padding: 5px;
+
+        .remember {
+            width: 25px;
+            height: 25px;
+            position: relative;
+            top: 6px;
+            left: 5px;
+            .remember-label {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+

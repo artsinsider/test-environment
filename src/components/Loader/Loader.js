@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../../5.svg'
-import './Loader.css'
+import logo from '../../media/preloader.svg'
+// import './Loader.scss'
 
 export default function Loader(props) {
     const wrapper = !props.isLoading ? 'loader-wrapper-visible' : 'loader-wrapper';

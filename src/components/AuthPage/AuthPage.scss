@@ -1,0 +1,70 @@
+
+.home {
+  .links {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background: #19a6db;
+    font-weight: 200;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #2de8fc;
+
+    a {
+      display: inline-block;
+      color: #2de8fc;
+      padding: 10px;
+      text-decoration: none;
+
+      &:hover {
+        color: #006b8d;
+        transition: color 0.3s ;
+      }
+    }
+
+    .selected {
+      color: #fff;
+    }
+  }
+
+
+
+  .auth-page {
+    height: 100vh;
+    text-align: center;
+
+    .form-auth {
+      display: inline-block;
+      vertical-align: middle;
+      width: 310px;
+      padding: 0;
+
+      .title-auth-form {
+        background-color: #19a6db;
+        padding: 28px 0;
+        border-radius: 3px 3px 0 0;
+        margin: 0;
+        color: #fff;
+        letter-spacing: 1px;
+        font-size: 19px;
+        border-bottom: 1px solid #d4d4d4;
+        font-weight: 200;
+      }
+
+      .forgot-auth-data {
+        font-weight: 200;
+        color: #afafaf;
+        font-size: 14px;
+        padding: 5px 0 15px 0;
+        //&:hover
+      }
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      min-height: inherit;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import {Route, NavLink}     from 'react-router-dom';
+import {Route, Redirect, NavLink}     from 'react-router-dom';
 import {connect}            from 'react-redux'
 import SignInForm           from './Sign Form/SignInForm'
 import SignUpForm           from './Sign Form/SignUpForm'
 import Loader               from '../Loader/Loader'
 import {signUp, moduleName} from  '../../ducks/auth'
 
-import './AuthPage.css'
-
 class AuthPage extends Component {
 
     handelSignIn = (e) => {
-        console.log('handelSignIn')
         e.preventDefault();
     };
 
@@ -21,19 +18,22 @@ class AuthPage extends Component {
         return false
     };
 
-    signIn = () => <SignInForm text="Вход" onSubmit={this.handelSignIn} />
+    signIn = () => <SignInForm text="Вход" onSubmit={this.handelSignIn} />;
 
-    signUp = () => <SignUpForm text="Зарегестирроваться" onSubmit={this.handelSignUp} />
+    signUp = () => <SignUpForm text="Зарегестирроваться" onSubmit={this.handelSignUp} />;
 
     render() {
         return (
             <div>
                 <div className="home">
-                    <NavLink activeClassName="selected" to="/auth/signin">Вход</NavLink>
-                    <NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</NavLink>
+                    <div className="links">
+                        <NavLink activeClassName="selected" to="/auth/signin">Авторизоваться</NavLink>
+                        <NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</NavLink>
+                    </div>
+
                     <div className="auth-page">
                         <Route path="/auth/signin" render={this.signIn} />
-                        <Route path="/auth/signup" render={this.signUp} />
+                        <Route path="/auth/signup" render={() => ( !!this.props.user ? (<Redirect to="/people"/>) : this.signUp())} />
                     </div>
                 </div>
                <Loader isLoading={this.props.loading}/>
@@ -48,4 +48,4 @@ export default connect(state => {
         user: state[moduleName].user,
         loading: state[moduleName].loading
     }
-}, {signUp})(AuthPage)
+}, {signUp},null, {pure: false})(AuthPage)

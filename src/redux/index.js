@@ -3,7 +3,7 @@ import reducer                        from './reducer'
 import {logger}                       from 'redux-logger'
 import thunk                          from 'redux-thunk'
 import {routerMiddleware}             from 'react-router-redux'
-import history                        from '../history'
+import history                        from '../config/history'
 
 const enhancer = applyMiddleware(routerMiddleware(history) ,logger, thunk);
 const store = createStore(reducer, enhancer);
