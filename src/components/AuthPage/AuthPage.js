@@ -13,7 +13,6 @@ class AuthPage extends Component {
     };
 
     handelSignUp = ({email, password}) => {
-
         this.props.signUp(email, password);
         return false
     };

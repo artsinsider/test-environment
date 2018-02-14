@@ -54,5 +54,5 @@ export function signUp(email, password) {
 }
 
 firebase.auth().onAuthStateChanged(user => {
-    console.log('user', user)
+    // console.log('user', user)
 });

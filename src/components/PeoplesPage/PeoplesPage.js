@@ -1,17 +1,39 @@
 import React, { Component } from 'react';
 import PeoplesForm          from './PeoplesForm/PeoplesForm'
+import {connect}            from 'react-redux'
+import {addPeople, moduleName} from  '../../ducks/people'
 
 class PeoplesPage extends Component {
-    render() {
-        return (
-            <div className="peoples-page">
-                <div>
-                    <PeoplesForm/>
-                </div>
 
+    addNewPeople = (data) => {
+        this.props.addPeople(data);
+        return false;
+    };
+
+    render() {
+        const {peoples} = this.props;
+        console.log('peoples',peoples)
+        return (
+            <div className="peoples">
+                <div className="peoples-page">
+                    <PeoplesForm onSubmit={this.addNewPeople}/>
+                </div>
+                <div className="peoples-list">
+                    {[].map(el =>
+                        <div key={el}>
+                            <span>{`${peoples[el].name} ${peoples[el].lastName}`}</span>
+                        </div>
+                    )}
+                </div>
             </div>
         );
     }
 }
 
-export default PeoplesPage;
+
+
+export default connect(state => {
+    return {
+        peoples: state[moduleName].peoples,
+    }
+}, {addPeople})(PeoplesPage)
