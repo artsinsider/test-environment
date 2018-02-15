@@ -1,0 +1,52 @@
+.peoples-list {
+  margin: 0 10px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+  border-radius: 3px;
+
+  table {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 200;
+    color: #4b4e56;
+
+    caption {
+      margin: 15px 0;
+    }
+
+    tr {
+      border-bottom: 1px solid #d4d4d4;
+
+
+      td {
+        padding: 5px 0;
+        span {
+          padding: 0 10px;
+          min-width: 100px;
+          max-width: 120px;
+        }
+      }
+      th {
+        padding-bottom: 10px;
+        span {
+          padding: 0 10px;
+        }
+      }
+      &:nth-child(2n){
+         background: #efefef;
+       }
+    }
+    .people-line {
+      cursor: pointer;
+      &:hover {
+        background: #9e9e9e;
+        color: #fff;
+      }
+    }
+  }
+
+
+}

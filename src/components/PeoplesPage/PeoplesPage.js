@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PeoplesForm          from './PeoplesForm/PeoplesForm'
+import PeoplesList          from './PeopleList/PeopleList'
 import {connect}            from 'react-redux'
 import {addPeople, moduleName} from  '../../ducks/people'
 
 class PeoplesPage extends Component {
-
     addNewPeople = (data) => {
         this.props.addPeople(data);
         return false;
@@ -19,11 +19,7 @@ class PeoplesPage extends Component {
                     <PeoplesForm onSubmit={this.addNewPeople}/>
                 </div>
                 <div className="peoples-list">
-                    {[].map(el =>
-                        <div key={el}>
-                            <span>{`${peoples[el].name} ${peoples[el].lastName}`}</span>
-                        </div>
-                    )}
+                    <PeoplesList items={peoples}/>
                 </div>
             </div>
         );

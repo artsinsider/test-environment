@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background-color: #eeeeee; }
   body h3 {
     margin: 0;
     padding: 0; }
@@ -208,14 +209,43 @@ body {
     min-width: 400px;
     background: #fff;
     text-align: center;
-    box-shadow: 2px 3px 7px 0 #4a4a4a;
-    border: 1px solid #d4d4d4; }
-  .peoples .peoples-list {
-    margin: 0 10px;
-    background: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border-radius: 3px; }
+
+.peoples-list {
+  margin: 0 10px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  border-radius: 3px; }
+  .peoples-list table {
+    width: 100%;
     text-align: center;
-    box-shadow: 2px 3px 7px 0 #4a4a4a;
-    border: 1px solid #d4d4d4; }
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 200;
+    color: #4b4e56; }
+    .peoples-list table caption {
+      margin: 15px 0; }
+    .peoples-list table tr {
+      border-bottom: 1px solid #d4d4d4; }
+      .peoples-list table tr td {
+        padding: 5px 0; }
+        .peoples-list table tr td span {
+          padding: 0 10px;
+          min-width: 100px;
+          max-width: 120px; }
+      .peoples-list table tr th {
+        padding-bottom: 10px; }
+        .peoples-list table tr th span {
+          padding: 0 10px; }
+      .peoples-list table tr:nth-child(2n) {
+        background: #efefef; }
+    .peoples-list table .people-line {
+      cursor: pointer; }
+      .peoples-list table .people-line:hover {
+        background: #9e9e9e;
+        color: #fff; }
 
 .btn-simple {
   font-family: sans-serif;
