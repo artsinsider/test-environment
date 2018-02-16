@@ -12,7 +12,6 @@ class PeoplesPage extends Component {
 
     render() {
         const {peoples} = this.props;
-        console.log('peoples',peoples)
         return (
             <div className="peoples">
                 <div className="peoples-page">
@@ -20,6 +19,9 @@ class PeoplesPage extends Component {
                 </div>
                 <div className="peoples-list">
                     <PeoplesList items={peoples}/>
+                </div>
+                <div className="empty-block">
+                    <h3>Дополнительные данные</h3>
                 </div>
             </div>
         );
