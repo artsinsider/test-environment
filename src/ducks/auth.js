@@ -1,12 +1,6 @@
-import {appName} from '../firebase'
 import firebase  from 'firebase'
-import {Record} from 'immutable'
-
-export const moduleName  = 'auth';
-
-export const SIGN_UP_REQUEST = `${appName}/${moduleName}/SIGN_UP_REQUEST`;
-export const SIGN_UP_SUCCESS = `${appName}/${moduleName}/SIGN_UP_SUCCESS`;
-export const SIGN_UP_ERROR = `${appName}/${moduleName}/SIGN_UP_ERROR`;
+import {Record}  from 'immutable'
+import * as AC   from '../actions/auth'
 
 const ReducerRecord = Record({
     user:null,
@@ -18,15 +12,15 @@ export default function authReducer(state = new ReducerRecord, action) {
     const {type} = action;
 
     switch (type) {
-        case SIGN_UP_REQUEST:
+        case AC.SIGN_UP_REQUEST:
             return state.set('loading', true);
 
-        case SIGN_UP_SUCCESS:
+        case AC.SIGN_UP_SUCCESS:
             return state.set('user', action.user)
                         .set('loading', false)
                         .set('error', null);
 
-        case SIGN_UP_ERROR:
+        case AC.SIGN_UP_ERROR:
             return state.set('error', action.error)
                         .set('loading', false);
 
@@ -37,16 +31,16 @@ export default function authReducer(state = new ReducerRecord, action) {
 export function signUp(email, password) {
     return (dispatch) => {
        dispatch({
-           type: SIGN_UP_REQUEST
+           type: AC.SIGN_UP_REQUEST
        })
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(user => dispatch({
-                type: SIGN_UP_SUCCESS,
+                type: AC.SIGN_UP_SUCCESS,
                 user
             }))
             .catch(error => dispatch({
-                type: SIGN_UP_ERROR,
+                type: AC.SIGN_UP_ERROR,
                 error
             }))
 
@@ -54,5 +48,5 @@ export function signUp(email, password) {
 }
 
 firebase.auth().onAuthStateChanged(user => {
-    console.log('user', user)
+    // console.log('user', user)
 });

@@ -7,7 +7,6 @@ import Button               from '../../LibraryComponent/Button/Button'
 class SignUpForm extends Component {
     render() {
         const {handleSubmit, text} = this.props;
-
         return (
             <div className="form-auth">
                 <div className="title-auth-form">Запись на саммит</div>

@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import {Route, Redirect, NavLink}     from 'react-router-dom';
-import {connect}            from 'react-redux'
-import SignInForm           from './Sign Form/SignInForm'
-import SignUpForm           from './Sign Form/SignUpForm'
-import Loader               from '../Loader/Loader'
-import {signUp, moduleName} from  '../../ducks/auth'
+import React,{Component} from 'react';
+import * as ROUTING      from 'react-router-dom';
+import {connect}         from 'react-redux'
+import SignInForm        from './Sign Form/SignInForm'
+import SignUpForm        from './Sign Form/SignUpForm'
+import Loader            from '../Loader/Loader'
+import { signUp }        from  '../../ducks/auth'
+import { moduleName }    from '../../actions/auth'
 
 class AuthPage extends Component {
 
@@ -13,7 +14,6 @@ class AuthPage extends Component {
     };
 
     handelSignUp = ({email, password}) => {
-
         this.props.signUp(email, password);
         return false
     };
@@ -27,13 +27,13 @@ class AuthPage extends Component {
             <div>
                 <div className="home">
                     <div className="links">
-                        <NavLink activeClassName="selected" to="/auth/signin">Авторизоваться</NavLink>
-                        <NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</NavLink>
+                        <ROUTING.NavLink activeClassName="selected" to="/auth/signin">Авторизоваться</ROUTING.NavLink>
+                        <ROUTING.NavLink activeClassName="selected" to="/auth/signup">Зарегестирроваться</ROUTING.NavLink>
                     </div>
 
                     <div className="auth-page">
-                        <Route path="/auth/signin" render={this.signIn} />
-                        <Route path="/auth/signup" render={() => ( !!this.props.user ? (<Redirect to="/people"/>) : this.signUp())} />
+                        <ROUTING.Route path="/auth/signin" render={this.signIn} />
+                        <ROUTING.Route path="/auth/signup" render={() => ( !!this.props.user ? (<ROUTING.Redirect to="/people"/>) : this.signUp())} />
                     </div>
                 </div>
                <Loader isLoading={this.props.loading}/>

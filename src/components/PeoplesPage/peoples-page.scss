@@ -1,0 +1,49 @@
+.peoples {
+  display: flex;
+  margin: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  //& > * {
+  //  flex-basis: 50%;
+  //}
+  .peoples-page {
+    margin: 10px;
+    min-width: 400px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    border-radius: 3px;
+    flex-basis: 30%;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  .peoples-list {
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 5;
+
+  }
+
+  .empty-block {
+    flex-basis: 98%;
+    flex-shrink: 0;
+    align-self: flex-end;
+    width: 100%;
+    min-height: 300px;
+    flex-grow: 1;
+    margin: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    border-radius: 3px;
+    background: #fff;
+    text-align: center;
+    h3 {
+      font-family: sans-serif;
+      line-height: 50px;
+      font-weight: 200;
+      color: #4b4e56;
+    }
+  }
+}
+

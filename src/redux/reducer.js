@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 import {routerReducer}   from 'react-router-redux'
 import {reducer as form} from 'redux-form'
-import authReducer, {moduleName as authModule}       from '../ducks/auth'
-import peopleReducer, {moduleName as peopleModule}       from '../ducks/people'
+import authReducer       from '../ducks/auth'
+import peopleReducer      from '../ducks/people'
+import {moduleName as peopleModule} from '../actions/people'
+import {moduleName as authModule}   from '../actions/auth'
 
 export default combineReducers({
     routerReducer,
