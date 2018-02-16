@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Route}            from 'react-router-dom';
 import {connect}          from 'react-redux';
-import {moduleName}       from '../../ducks/auth';
+import {moduleName}       from '../../actions/auth';
 import UnAuthorized       from './UnAuthorized'
 
 class ProtectedRoute extends Component {

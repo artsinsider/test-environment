@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import PeoplesForm          from './PeoplesForm/PeoplesForm'
-import PeoplesList          from './PeopleList/PeopleList'
-import {connect}            from 'react-redux'
-import {addPeople, moduleName} from  '../../ducks/people'
+import React, { Component }    from 'react';
+import PeoplesForm             from './PeoplesForm/PeoplesForm'
+import PeoplesList             from './PeopleList/PeopleList'
+import {connect}               from 'react-redux'
+import {addPeople}             from  '../../ducks/people'
+import {moduleName}            from '../../actions/people'
+import Loader                  from '../Loader/Loader'
 
 class PeoplesPage extends Component {
     addNewPeople = (data) => {
@@ -21,8 +23,9 @@ class PeoplesPage extends Component {
                     <PeoplesList items={peoples}/>
                 </div>
                 <div className="empty-block">
-                    <h3>Дополнительные данные</h3>
+                    <h3 style={{color: this.props.color}}>Дополнительные данные</h3>
                 </div>
+                <Loader isLoading={this.props.loading}/>
             </div>
         );
     }
@@ -33,5 +36,6 @@ class PeoplesPage extends Component {
 export default connect(state => {
     return {
         peoples: state[moduleName].peoples,
+        loading: state[moduleName].loading,
     }
 }, {addPeople})(PeoplesPage)
