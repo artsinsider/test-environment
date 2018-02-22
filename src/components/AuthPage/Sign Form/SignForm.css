@@ -16,3 +16,9 @@
       left: 5px; }
       .form-auth .remember-me .remember .remember-label {
         margin-left: 10px; }
+  .form-auth .info {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 200;
+    color: #0b82ad; }

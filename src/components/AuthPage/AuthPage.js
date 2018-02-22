@@ -20,9 +20,11 @@ class AuthPage extends Component {
 
     signIn = () => <SignInForm text="Вход" onSubmit={this.handelSignIn} />;
 
-    signUp = () => <SignUpForm text="Зарегестирроваться" onSubmit={this.handelSignUp} />;
+    signUp = () => <SignUpForm text="Зарегестирроваться" authError={this.props.authError} onSubmit={this.handelSignUp} />;
+
 
     render() {
+        console.log('authError', this.props.authError)
         return (
             <div>
                 <div className="home">
@@ -46,6 +48,7 @@ class AuthPage extends Component {
 export default connect(state => {
     return {
         user: state[moduleName].user,
+        authError: state[moduleName].error,
         loading: state[moduleName].loading
     }
 }, {signUp},null, {pure: false})(AuthPage)

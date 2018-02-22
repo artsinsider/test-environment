@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
-import {reduxForm, Field}   from 'redux-form';
-import EmailValidator       from 'email-validator';
-import ErrorField           from '../../ErrorField/ErrorField'
-import Button               from '../../LibraryComponent/Button/Button'
+import React,{PureComponent} from 'react';
+import {reduxForm, Field}    from 'redux-form';
+import EmailValidator        from 'email-validator';
+import ErrorField            from '../../ErrorField/ErrorField'
+import Button                from '../../LibraryComponent/Button/Button'
 
-class SignUpForm extends Component {
+class SignUpForm extends PureComponent {
     render() {
-        const {handleSubmit, text} = this.props;
+        const {handleSubmit, text, authError, } = this.props;
+
+        // console.log('error', error, error ? "auth/email-already-in-use" : error)
+        console.log('this.props', this.props.authError)
         return (
             <div className="form-auth">
                 <div className="title-auth-form">Запись на саммит</div>
@@ -23,6 +26,8 @@ class SignUpForm extends Component {
                     </div>
                     <Button type="submit" text={text}/>
                 </form>
+
+                {authError? <div className="info" >Данный пользователь уже зарегестрирован в системе</div>: null}
             </div>
         );
     }
